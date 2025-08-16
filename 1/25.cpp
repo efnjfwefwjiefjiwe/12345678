@@ -1,12 +1,12 @@
 #include<bits/stdc++.h>
-using namespace std;
+using namespace std ;
 int main(){
-long long int n ;
-int k ;
-cin >> n >> k;
-bool p = true;
-bool d = true;
-int cnt = 0 ;
+    long long int n ;
+    int k ;
+    cin >> n >> k;
+    bool p = true;
+    bool d = true;
+    int cnt = 0 ;
     while ( p ) {
         if ( k > cnt ) {
             if ( n % 200 == 0 ) {
@@ -25,12 +25,12 @@ int cnt = 0 ;
         p = false ;
         }
     cnt ++ ;
+    } 
+    if ( d ) {
+    cout << n << endl ;
     }
-if ( d ) {
-cout << n << endl ;
-}
-else{
-cout << n << "200" << endl ;
-}
-return 0 ;
+    else{
+    cout << n << "200" << endl ;
+    }
+    return 0 ;
 }
