@@ -24,7 +24,7 @@ int main ( ) {
   for ( int e = 0 ; t > e ;e ++ ) {
     long long int s = 0 ;
     if( g[e].n % 2 == 0 ){
-    s = g[e].n + 2 * g[e].k ;
+      s = g[e].n + 2 * g[e].k ;
   }
   else {
     s = g[e].n + 2 * ( g[e].k - 1 ) + q( g[e].n ) ;
