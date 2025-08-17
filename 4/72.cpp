@@ -16,10 +16,10 @@ struct Pair {
 } ;
 int main ( ) {
   int t ;
-  cin >> t;
+  cin >> t ;
   vector < Pair > g ( t ) ;
-  for ( int e=0;t>e;e++){
-    cin >>g[e].n>>g[e].k;
+  for ( int e = 0 ; t > e ; e ++ ) {
+    cin >> g[e].n >> g[e].k ;
   }
   for ( int e = 0 ; t > e ;e ++ ) {
     long long int s = 0 ;
@@ -27,7 +27,7 @@ int main ( ) {
     s = g[e].n + 2 * g[e].k ;
   }
   else {
-  s = g[e].n + 2 * ( g[e].k - 1 ) + q( g[e].n ) ;
+    s = g[e].n + 2 * ( g[e].k - 1 ) + q( g[e].n ) ;
   }
   cout << s << endl ;
   }
