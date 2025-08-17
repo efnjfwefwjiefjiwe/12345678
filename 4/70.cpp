@@ -45,7 +45,7 @@ long long int Razl ( long long int x ) {
 int main ( ) {
   int n ;
   cin >> n ;
-  vector<long long int>a(n);
+  vector < long long int > a ( n ) ;
   for ( int e = 0 ; n > e ; e ++ ) {
     cin >> a[e] ;
   }
