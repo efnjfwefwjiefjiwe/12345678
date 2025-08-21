@@ -1,35 +1,21 @@
 #include<bits/stdc++.h>
 using namespace std;
-int solve(int a,int b){
-int c=a-b;
-int s=1;
-for(int e=2;c>=e*e;e++){
-if(c%e==0){
-int cnt=0;
-while(c%e==0){
-cnt++;
-c=c/e;
-}
-s=s*(cnt+1);
-e=2;
-}
-}
-if(c!=1){
-s=s*2;
-}
-return s;
-}
 int main(){
+ios::sync_with_stdio(0);
+cout.tie(0), cin.tie(0);
 int t;
 cin >> t;
 vector<int>ot;
 for(int e=0;t>e;e++){
-int b,a;
-cin >>a>>b;
-if(b>a){
-swap(a,b);
+int k,n;
+cin >>k>>n;
+if(k>n){
+swap(k,n);
 }
-ot.push_back(solve(a,b));
+for(int cnt=1;k>=cnt;cnt++){
+cout <<(n/k)*cnt <<" ";
+}
+cout << "" << endl;
 }
 for(auto c:ot){
 cout <<c << endl;
