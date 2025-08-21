@@ -10,7 +10,7 @@ int gsd(int b, int d){
 int solve(int b, int d){
     int j = gsd(b, d);
     if (b % (d / j) == 0) {
-    return b / (d / j) - 1;
+        return b / (d / j) - 1;
     }
     else{
         return b / (d / j);
