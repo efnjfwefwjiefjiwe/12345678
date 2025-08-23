@@ -43,6 +43,6 @@ int main(){
     }
     for (int e = 0; ot.size() > e; e++) {
         cout << ot[e] << endl;
-    
     }
+    return 0;
 }
