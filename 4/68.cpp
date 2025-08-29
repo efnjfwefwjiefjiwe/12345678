@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 using ll=long long;
-map<ll,int>prime;
+vector<int>prime(14999982,0);
 const ll ni =15 * 1e6 + 1;
 vector<ll>number(ni, 1e7);
 void resh(){
@@ -31,7 +31,9 @@ void solve(ll x){
         }
     }
 }
-int main(){
+int main(){                                                                           
+    ios::sync_with_stdio(0);   
+    cout.tie(0),cin.tie(0);        
     resh();
     int n;
     cin >>n;
@@ -57,7 +59,7 @@ int main(){
         }
         int maxi = 0;
         for(auto c = prime.begin(); c != prime.end(); ++c ){
-            maxi = max(maxi, c->second);
+            maxi = max(maxi, *c);
         }
         cout <<n - maxi <<endl;
     }
