@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-int solve(int a ,int b) {
+int solve(int a ,int b){
   int c = a - b;
   int s = 1;
   for(int e = 2; c >= e * e; e++){
