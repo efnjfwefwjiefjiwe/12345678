@@ -7,17 +7,17 @@ int main() {
     ll l = 0;
     ll r = 1e18 + 1;
     ll m = 0;
-    ll x = 0;
-    ll y = 0;
+    ll vertical = 0;
+    ll gorizontal = 0;
     while (r - l > 1) {
         m = (r + l) / 2;
-        x = m / h;
-        y = m / w;
-        if (x == 0) {
+        vertical = m / h;
+        gorizontal = m / w;
+        if (vertical == 0) {
             l = m;
-        } else if (n % x == 0 && y >= n / x) {
+        } else if (n % vertical == 0 && gorizontal >= n / vertical) {
             r = m;
-        } else if (n % x != 0 && y >= n / x + 1) {
+        } else if (n % vertical!= 0 && gorizontal >= n / vertical + 1) {
             r = m;
         } else {
             l = m;
