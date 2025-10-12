@@ -1,9 +1,9 @@
 #include<bits/stdc++.h>
 using namespace std;
+int P[1001][2];
 int main() {
     int n, k;
     cin >> n >> k;
-    int P[1001][2];
     P[1][0] = k - 1;
     P[1][1] = 0;
     for (int i = 2; n >= i; ++i) {
