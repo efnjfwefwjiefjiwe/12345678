@@ -2,9 +2,6 @@
 using namespace std;
 using ll = long long;
 using ld = long double;
-struct point{
-    int x, y;
-};
 bool dp[1001];
 int main() {
     ios::sync_with_stdio(0);
@@ -25,8 +22,10 @@ int main() {
     }
     for (int i = minp * 2; 1000 >= i; ++i) {
         if (dp[i] == false) {
-            for (int j = 1; i / 2 >= j && dp[i] == false; ++j) {
-                dp[i] = dp[j] && dp[i - j];
+            for (int j = 0; n > j && dp[i] == false; ++j) {
+                if (i - p[j] > 0) {
+                    dp[i] = dp[i - p[j]];
+                }
             }
         }
     }
