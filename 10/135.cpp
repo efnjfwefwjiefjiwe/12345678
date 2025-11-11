@@ -5,19 +5,19 @@ using namespace std;
 using ll = long long;
 
 struct mx {
-    __int128 m[2][2];
+    ll m[2][2];
 };
 
-__int128 n, k, mod;
+ll n, k, mod;
 
 mx c, ans, until;
 
-void mx_mul(mx &a, mx &b) {
+void mx_mul(const mx &a, const mx &b) {
     for (int i = 0; i < 2; ++i) {
         for (int j = 0; j < 2; ++j) {
             until.m[i][j] = 0;
             for (int p = 0; p < 2; ++p) {
-                until.m[i][j] = __int128(until.m[i][j] + ((a.m[i][p] * b.m[p][j]) % mod)) % mod;
+                until.m[i][j] = ll(__int128(until.m[i][j] + a.m[i][p] * b.m[p][j])) % mod;
             }
         }
     }
@@ -27,37 +27,28 @@ void dp(ll len) {
         if (len % 2 == 0) {
             len /= 2;
             mx_mul(ans, ans);
-            memcpy(ans.m, until.m, sizeof(until));
         } else {
             --len;
             mx_mul(ans, c);
-            memcpy(ans.m, until.m, sizeof(until));
         }
+        ans = until;
     }
 }
 
 int main(){
-    ll n0, k0, mod0;
-    
-    cin >> n0 >> k0 >> mod0;
-    
-    n = n0;
-    k = k0;
-    mod = mod0;
+    cin >> n >> k >> mod;
     
     c.m[0][0] = k - 1;
     c.m[1][0] = k - 1;
     c.m[0][1] = 1;
     c.m[1][1] = 0;
 
-    memcpy(ans.m, c.m, sizeof(c));
+    ans = c;
  
 
     dp(n - 2);
      
-    ll x = __int128(((ans.m[0][0] + ans.m[0][1]) % mod) * (k - 1))  % mod;
- 
-    cout << x << endl;
+    cout << ll(((__int128)ans.m[0][0] + ans.m[0][1]) * (k - 1)) % mod << endl;
     
     return 0;
 }
