@@ -31,7 +31,7 @@ void dp(ll len) {
             --len;
             mx_mul(ans, c);
         }
-        ans = until;
+         memcpy(ans.m, until.m, sizeof(c));
     }
 }
 
@@ -43,9 +43,8 @@ int main(){
     c.m[0][1] = 1;
     c.m[1][1] = 0;
 
-    ans = c;
+    memcpy(ans.m, c.m, sizeof(c));
  
-
     dp(n - 2);
      
     cout << ll(((__int128)ans.m[0][0] + ans.m[0][1]) * (k - 1)) % mod << endl;
