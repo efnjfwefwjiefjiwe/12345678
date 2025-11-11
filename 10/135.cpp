@@ -12,7 +12,7 @@ ll n, k, mod;
 
 mx c, ans, until;
 
-void mx_mul(const mx &a, const mx &b) {
+void mx_mul(mx a, mx b) {
     for (int i = 0; i < 2; ++i) {
         for (int j = 0; j < 2; ++j) {
             until.m[i][j] = 0;
@@ -37,17 +37,17 @@ void dp(ll len) {
 
 int main(){
     cin >> n >> k >> mod;
-    
+
     c.m[0][0] = k - 1;
     c.m[1][0] = k - 1;
     c.m[0][1] = 1;
     c.m[1][1] = 0;
 
     memcpy(ans.m, c.m, sizeof(c));
- 
+
     dp(n - 2);
-     
-    cout << ll(((__int128)ans.m[0][0] + ans.m[0][1]) * (k - 1)) % mod << endl;
-    
+
+    cout << (ll((__int128)(ans.m[0][0] + ans.m[0][1])) * (k - 1)) % mod << endl;
+
     return 0;
 }
